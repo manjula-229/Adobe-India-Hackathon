@@ -50,6 +50,29 @@ _See included [sample.pdf](./sample.pdf) and [sample.json](./sample.json) for a 
     ```
     The result will be saved as `sample.json`.
 
+### Using Docker
+
+You can run this project inside a container—no Python setup required!
+
+#### 1. Build the Docker image
+
+docker build -t pdf-heading-extractor .
+
+text
+
+#### 2. Run the Docker container
+
+docker run --rm
+-v "$(pwd)/input:/app/input"
+-v "$(pwd)/output:/app/output"
+pdf-heading-extractor
+
+text
+
+- Your input PDF (`input/sample.pdf`) and resulting JSON (`output/sample.json`) will be shared between your computer and the container.
+- Adjust paths if your layout differs.
+
+
 ## File List
 
 - `app.py` — main processing script
